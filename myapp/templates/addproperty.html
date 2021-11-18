@@ -1,0 +1,195 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">Add-property Form</h2>
+        <hr />
+        <form method="post" enctype="multipart/form-data" onsubmit="myFunction()">{% csrf_token %}
+            <div class="form-group row">
+                <label  class="col-sm-2 col-form-label">Banner</label>
+                <div class="col-sm-7">
+                    <input type="file" name = "banner" class="form-control" required>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="Property Name" class="col-sm-2 col-form-label">Property Name</label>
+                <div class="col-sm-7">
+                    <input type="text" name = "property_name" class="form-control" placeholder="Property Name" required>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label for="Property Type" class="col-sm-2 col-form-label">Property Type</label>
+                <div class="col-sm-7">
+                    <select id="Property Type" name = "property_type" class="form-control" placeholder="Property Type" required>
+                        <option value="-1" selected>select..</option>
+                        <option value="Land/plot">Land/plot</option>
+                        <option value="Indivdual house">Indivdual house</option>
+                        <option value="flats">flats</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Villas">Villas</option>
+                        <option value="Duplex-building">Duplex-building</option>
+                        <option value="Agriculture land">Agriculture land</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Area" class="col-sm-2 col-form-label">Area</label>
+                <div class="col-sm-7">
+                    <input type="text" name = "area" class="form-control" placeholder="Area  in sqft" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="Price" class="col-sm-2 col-form-label">Price</label>
+                <div class="col-sm-4">
+                    <input type="text" name = "price" class="form-control" placeholder="Price in Rupees" required>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label for="No.of bedrooms" class="col-sm-2 col-form-label">No.of bedrooms</label>
+                <div class="col-sm-4">
+                    <select id="No.of bedrooms" name = "no_of_bedrooms" class="form-control" placeholder="No.of bedrooms" required>
+                        <option value="-1" selected>select..</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <label for="No.of bathrooms" class="col-sm-2 col-form-label">No.of bathrooms</label>
+                <div class="col-sm-4">
+                    <select id="No.of bathrooms" name = "no_of_bathrooms" class="form-control" placeholder="No.of bathrooms" required>
+                        <option value="-1" selected>select..</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputcity" class="col-sm-2 col-form-label">City</label>
+                <div class="col-sm-4">
+                    <select id="inputcity" name = "city" class="form-control" placeholder="City" required>
+                        <option value="-1" selected>select..</option>
+                        <option value="New Delhi">NEW DELHI</option>
+                        <option value="Amaravathi">Amaravathi</option>
+                        <option value="vizayavada">Vizag</option>
+                        <option value="Itanagar">Itanagar</option>
+                        <option value="Dispur">Dispur</option>
+                        <option value="Patna">Patna</option>
+                        <option value="Raipur">Raipur</option>
+                        <option value="Panaji">Panaji</option>
+                        <option value="Gandhinagar">Gandhinagar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Shimla">Shimla</option>
+                        <option value="Ranchi">Ranchi</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Imphal">Imphal</option>
+                        <option value="Shillong">Shillong</option>
+                        <option value="Aizawl">Aizawl</option>
+                        <option value="Kohima">Kohima</option>
+                        <option value="Bhubaneswar">Bhubaneswar</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Gangtok">Gangtok</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Agartala">Agartala</option>
+                        <option value="Lucknow">Lucknow</option>
+                        <option value="Dehradun">Dehradun</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Sutra">Sutra</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Agra">Agra</option>
+                        <option value="SriNagar">SriNagar</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="solapur">solapur</option>
+                        <option value="Noida">Noida</option>
+                    </select>
+                </div>
+                <label for="inputState" class="col-sm-2 col-form-label">State</label>
+                <div class="col-sm-4">
+                    <select id="inputState" name = "state" class="form-control" placeholder="State" required>
+                        <option value="-1" selected>select..</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">
+
+                </div>
+                <div class="col-sm-2">
+                   
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+
+    <script>
+
+        $('#dateOfBirth').datepicker({
+
+            uiLibrary: 'bootstrap4',
+
+            format: 'dd/mm/yyyy'
+
+        });
+
+    </script>
+    <script>
+        function myFunction() {
+          alert("Added Successfully !");
+        }
+        </script>
+
+{% endblock %}

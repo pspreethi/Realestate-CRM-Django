@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+* {
+font-family: "Times New Roman", Times, serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+outline: none;
+border: none;
+text-decoration: none;
+text-transform: capitalize;
+}
+span{
+
+}
+
+.hero-image {
+background-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+background-color: #cccccc;
+height: 500px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+opacity: 0.9
+}
+
+.services {
+padding: 2rem 9%;
+}
+.contact {
+padding: 2rem 9%;
+}
+.heading {
+text-align: center;
+color: #0062AE;
+font-size: 2rem;
+padding-bottom: 2rem;
+font-family: "Times New Roman", Times, serif;
+}
+
+.hero-text {
+text-align: center;
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #0062AE
+}
+
+.navbar-brand {
+font-size: xx-large;
+
+}
+
+.nav-item {
+font-size: large;
+}
+
+.nav-link {
+color: black;
+}
+
+#find {
+font-weight: 700;
+}
+
+.navbar .nav-link:hover {
+background-color: #adc8dd;
+color: black;
+}
+
+.search {
+background-color: #fff;
+padding: 4px;
+border-radius: 5px
+}
+
+.search-1 {
+position: relative;
+width: 100%
+}
+
+.search-1 input {
+height: 45px;
+border: none;
+width: 100%;
+padding-left: 34px;
+padding-right: 10px;
+border-right: 2px solid #eee
+}
+
+.search-1 input:focus {
+border-color: none;
+box-shadow: none;
+outline: none
+}
+
+.search-1 i {
+position: absolute;
+top: 12px;
+left: 5px;
+font-size: 24px;
+color: #eee
+}
+
+::placeholder {
+color: gray;
+}
+
+.search-2 {
+position: relative;
+width: 100%
+}
+
+.search-2 input {
+height: 45px;
+border: none;
+width: 100%;
+padding-left: 18px;
+padding-right: 100px
+
+}
+.search-2 input:focus {
+border-color: none;
+box-shadow: none;
+outline: none
+}
+.search-2 i {
+position: absolute;
+top: 12px;
+left: -10px;
+font-size: 24px;
+color: #eee
+
+}
+.search-2 button {
+position: absolute;
+right: 1px;
+top: 0px;
+border: none;
+height: 45px;
+background-color: #0062AE;
+color: #fff;
+width: 90px;
+border-radius: 4px
+}
+
+@media (max-width:700px) {
+.search-1 input {
+border-right: none;
+border-bottom: 1px solid #eee
+}
+
+.search-2 i {
+left: 4px
+}
+
+.search-2 input {
+padding-left: 34px
+}
+
+.search-2 button {
+height: 37px;
+top: 5px
+}
+}
+
+.services .box-container {
+display: flex;
+flex-wrap: wrap;
+grid-gap: 1rem
+}
+
+.services .box-container .box {
+flex: 1 1 10rem;
+border-radius: .5rem;
+background: #fff;
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+border: .1rem solid rgba(0,0,0,.2);
+text-align: center;
+padding: 1.5rem;
+}
+
+.services .box-container .box h3 {
+font-size: 1.5 rem;
+color: #333;
+}
+
+.services .box-container .box p {
+font-size: 1rem;
+color: #666;
+padding: .5rem 0;
+line-height: 2;
+}
+
+.btn {
+margin-top: 1rem;
+display: inline-block;
+padding: .8rem 2.5rem;
+border-radius: .5rem;
+font-size: 1rem;
+color: #0062AE;
+background: #adc8dd;
+cursor: pointer;
+text-align: center;
+}
+
+.contact .container {
+display: flex;
+flex-wrap: wrap;
+grid-gap: 1rem;
+padding-bottom: 1.5rem;
+}
+
+.contact .container {
+flex: 1 1 25rem;
+background: #fff;
+padding: 2rem;
+border: .1rem solid rgba(0,0,0,.2);
+border-radius: .5rem;
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+text-align: center;
+}

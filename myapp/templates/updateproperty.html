@@ -1,0 +1,73 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+<div class = "container" style="align-items: center;">
+    <h2 class="text-center">Update Property</h2>
+<form method="post" onsubmit="myFunction()">{% csrf_token %}
+    <div class="form-group row">
+        <label for="inputFirstName" class="col-sm-2 col-form-label">Banner</label>
+        <div class="col">
+            {{form.banner}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputLastName" class="col-sm-2 col-form-label">Property Name</label>
+        <div class="col">
+            {{form.property_name}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputMobile" class="col-sm-2 col-form-label">Property Type</label>
+        <div class="col-sm-4">
+            {{form.property_type}}
+        </div>
+
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Area</label>
+        <div class="col-sm-4">
+            {{form.area}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputMobile" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-4">
+            {{form.price}}
+        </div>
+
+        <label for="inputEmail3" class="col-sm-2 col-form-label">No of Bedrooms</label>
+        <div class="col-sm-4">
+            {{form.no_of_bedrooms}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputMobile" class="col-sm-2 col-form-label">No of Bathrooms</label>
+        <div class="col-sm-4">
+            {{form.no_of_bathrooms}}
+        </div>
+
+        <label for="inputEmail3" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-4">
+            {{form.city}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputMobile" class="col-sm-2 col-form-label">State</label>
+        <div class="col-sm-4">
+            {{form.state}}
+        </div>
+
+        <!-- <label for="inputEmail3" class="col-sm-2 col-form-label">Follow Up Date</label>
+        <div class="col-sm-4">
+            {{form.follow_up_date}}
+        </div> -->
+    </div>
+    <input type="submit" value="Submit" class="btn btn-outline-warning">
+   
+
+</form>
+</div>
+
+<script>
+    function myFunction() {
+      alert("Updated Successfully !");
+    }
+    </script> 
+{% endblock %}

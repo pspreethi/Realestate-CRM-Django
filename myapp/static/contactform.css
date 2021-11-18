@@ -1,0 +1,68 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+body {
+    /* body { */
+        background-image: url("https://media.istockphoto.com/photos/real-estate-concept-choose-house-to-buy-picture-id1282624945?b=1&k=20&m=1282624945&s=170667a&w=0&h=jtk7kVTK5XPuQ-CRncChevjoXzxf-4omVBBcL6FOnzo=");
+        background-color: white;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        text-align: left;
+        color: black
+    }
+
+h1 {
+    margin-bottom: 20px
+}
+
+label {
+    color: #333
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.navbar-brand {
+    font-size: xx-large;
+    
+    }
+    
+    .nav-item {
+    font-size: large;
+    }
+    
+    .nav-link {
+    color: black;
+    }
+    
+    #find {
+    font-weight: 700;
+    }
+    
+    .navbar .nav-link:hover {
+    background-color: #adc8dd;
+    color: black;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }

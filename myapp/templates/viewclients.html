@@ -1,0 +1,31 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+{% load static %}
+
+<body>
+<table class="table">
+	<tr class="bg-dark text-white">
+		<th>ID</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+        <th>Operations</th>
+		<!-- <th>Date of Publication</th> -->
+		<!-- <th>Actions</th> -->
+	</tr>
+	{% for i in clients %}
+	<tr>
+		<td>{{forloop.counter}}</td>
+		<td>{{i.firstname}}</a></td>
+		<td>{{i.lastname}}</td>
+		<!-- <td>{{i.dop}}</td> -->
+		<td>
+			<a href="/updateclient/{{i.firstname}}/" class="text-warning" title="Edit"><i class="bi bi-pencil-square"></i></a> &nbsp;&nbsp;&nbsp;
+			<!-- {% if request.user.is_superuser %} -->
+			<a href="/deleteclient/{{i.firstname}}/" class="text-danger" title="Delete"><i class="bi bi-trash"></i></a>
+			<!-- {% endif %} -->
+		</td>
+	</tr>
+	{% endfor %}
+</table> 
+
+  {% endblock %}

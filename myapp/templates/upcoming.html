@@ -1,0 +1,19 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+<table class="table">
+	<tr class="bg-dark text-white">
+		<th>ID</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+        <th>Follow Up Date</th>
+	</tr>
+	{% for i in clients %}
+	<tr>
+		<td>{{forloop.counter}}</td>
+		<td>{{i.firstname}}</a></td>
+		<td>{{i.lastname}}</td>
+		<td>{{i.follow_up_date}}</td>
+	</tr>
+	{% endfor %}
+</table> 
+  {% endblock %}

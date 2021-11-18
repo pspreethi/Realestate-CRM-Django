@@ -1,0 +1,43 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+{% load static %}
+<head>
+	<link rel="stylesheet" href="../static/properties.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<div class="container-fluid mb-5">
+        <div class="row">
+        	{% for i in properties %}
+            <div class="col-sm-3">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div>
+                            <img class="card-img-top" src={{i.banner.url}} alt="Banner image" width="340" height="200" />
+                        </div>
+                        <hr>
+                        <h5 class="text-center">{{i.property_name}}&nbsp;{{i.property_type}}</h5>
+                        <p class="mb-3 text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet.</p>
+                        <br>
+                        <div class="details">
+                            <h3> <i class="fa fa-expand"></i> {{i.area}}</h3>
+                            <h3> <i class="fas fa-money-bill"></i> {{i.price}}</h3>
+                            <h3> <i class="fa fa-bed"></i> 3 beds </h3>
+                        </div>
+                        <a href="/viewinfo/{{i.property_name}}" class="btn btn-primary btn-sm " style="  background-color: #0062AE;border: #0062AE; float: right;">
+                            <i class="fas fa-search pr-2"></i>View Details
+                        </a>
+                        <a href="/updateproperty/{{i.property_name}}/" class="text-warning mr-3" title="Edit"><i class="bi bi-pencil-square"></i></a>
+												{% if request.user.is_superuser %}
+												<a href="/deleteproperty/{{i.property_name}}/" class="text-danger" title="Delete"><i class="bi bi-trash"></i>
+												</a>
+												{% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+       </div>
+</div>
+
+  {% endblock %}

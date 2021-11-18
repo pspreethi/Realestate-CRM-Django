@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>View Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'viewinfo.css' %}" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <section id="listing" class="py-4">
+        <div class="container">
+            {% if user.is_superuser %}
+            <a href="/viewproperties/" class="btn btn-light mb-4">Back To Properties</a>
+            {% else %}
+            <a href="/properties/" class="btn btn-light mb-4">Back To Properties</a>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="imagebox">
+                        <img src={{property.banner.url}} alt="" class="img-main img-fluid mb-3" style="width: 800px;height: 446px">
+                    </div>
+                    <div class="row mb-5 thumbs">
+                        <div class="col-md-2">
+                            <a href={{property.banner.url}} target="imagebox" data-lightbox="home-images">
+                                <img src={{property.banner.url}} alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" target="imagebox" data-lightbox="home-images">
+                                <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="img-fluid">
+                            </a>
+                        </div>
+
+                        <div class="col-md-2">
+                            <a href="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" target="imagebox" data-lightbox="home-images">
+                                <img id="thumbnailImage" src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="" class="img-fluid">
+                            </a>
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <a href="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" target="imagebox" data-lightbox="home-images">
+                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" alt="" class="img-fluid">
+                            </a>
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <a href="https://images.unsplash.com/flagged/photo-1573168710865-2e4c680d921a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" target="imagebox" data-lightbox="home-images">
+                                <img src="https://images.unsplash.com/flagged/photo-1573168710865-2e4c680d921a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" alt="" class="img-fluid">
+                            </a>
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <a href="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" target="imagebox" data-lightbox="home-images">
+                                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="img-fluid">
+                            </a>
+                        </div>
+
+
+                    </div>
+                    
+                    <div class="row mb-5 fields">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-secondary">
+                                    <i class="fa fa-money"></i> Asking Price:
+                                    <span class="float-right">{{property.price}}</span>
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fa fa-bed"></i> Bedrooms:
+                                    <span class="float-right">{{property.no_of_bedrooms}} Beds</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-secondary">
+                                    <i class="fa fa-th-large"></i> Square Feet:
+                                    <span class="float-right">{{property.area}}</span>
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fa fa-bath"></i> Bathrooms:
+                                    <span class="float-right">{{property.no_of_bathrooms}} Baths</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="row mb-5">
+                        <div class="col-md-12">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1490197415175-074fd86b1fcc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Property Realtor</h5>
+                            <h6 class="text-secondary">Realtor Name</h6>
+                        </div>
+                    </div>
+                    <a class="btn btn-dark btn-block btn-lg" href="/requestinfo/">Make An Inquiry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('.thumbs a').click(function(e) {
+                e.preventDefault();
+                $('.imagebox img').attr("src",$(this).attr("href"))
+
+            })
+
+        })
+        //$("#thumbnailImage").click(function () {
+        //    $(this).attr('width', '400');
+        //    $(this).attr('height', '300');
+        //});
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
